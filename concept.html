@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>核のゴミ処分シミュレーター</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="核のゴミ処分シュミレーター">
+    <meta property="og:type" content="web-site">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <h1><a href="index.html">核のゴミ処分シミュレーター</a></h1>
+          <p class="header__news">
+            <span>新着情報</span><br class="tab">
+            <span><time>2019.9.30</time></span>
+            <span>本サイトをリリースしました</span>
+            <span class="more-read"><a href="post.html">...もっと読む</a></span>
+          </p>
+        </div>
+      </div>
+      <!-- navigation -->
+      <nav>
+        <div class="wrapper">
+          <div class="nav__img">
+            <img src="images/title.png" alt="ヒーローイメージ">
+          </div>
+          <div id="nav__button" class="tab">
+            <img class="center-abs" src="images/nav__button.png" alt="メニューボタン">
+            <img class="center-abs" src="images/nav__button__active.png" alt="メニューボタン">
+            <span class="triangle__left"></span>
+            <span class="triangle__right"></span>
+          </div>
+          <div class="nav__text">
+            <ul>
+              <li>
+                <a href="index.html">トップ<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="background.html">ゲームの背景<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="concept.html" class="current">コンセプト<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="education.html">教員のかたへ<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+            </ul>
+            <span class="triangle__right triangle__big tab"></span>
+          </div>
+        </div>
+      </nav>
+      <!-- //navigation -->
+    </header>
+    <!-- //header -->
+
+    <!-- main -->
+    <main>
+      <div class="wrapper">
+        <section class="concept">
+          <h2>コンセプト</h2>
+          <div class="container">
+            <h3>問題点</h3>
+            <p>日本では、ガラス固化体はすでに25,000本相当発生しているにも関わらず、10年以上も最終処分地の選定に向けた目処が立っていないのが現状です。こうした厳しい現状となったのは、多くの原因や問題点があります。<br>その中でも、「この処分問題に対する認知の低さ、とくに、若い世代への教育が行き届いていない」ことを問題点としてあげました。</p>
+            <div class="container__img">
+              <img id="student" class="pc" src="images/student.png" alt="生徒と先生のイラスト">
+              <img class="tab" width="80%" src="images/student.png" alt="生徒と先生のイラスト">
+            </div>
+          </div>
+          <div class="container">
+            <h3>問題を解決する手段</h3>
+            <p>そこで今回は、ゲーム性のある学習コンテンツを企画しました。<br>原子力発電所・再処理工場などがある架空の「小さい日本」をアイソメトリックなイラストで表現し、廃棄物の処分方法や処分場の候補地を探しだす、というものです。<br>中学校以上の学校での、学習教材としての使用を想定しました。</p>
+            <div class="container__img">
+              <img id="pc" class="pc" src="images/pc.png" alt="ノートパソコンのイラスト">
+              <img class="tab" width="80%" src="images/pc.png" alt="ノートパソコンのイラスト">
+            </div>
+          </div>
+          <div class="container">
+            <h3>ねらい</h3>
+            <p>このゲームは絶対にクリアできない、すなわち「詰む」ようになっています。<br>「ゲームが詰んでいる」ことと、核のゴミ問題の「詰んでいる現状」を、プレイヤー自身が重ね合わせることで、この問題を自分ごととして考えさせることがねらいです。</p>
+            <div id="container__stop" class="container__img">
+              <img id="stop_pc" class="pc" src="images/stop_pc.png" alt="ノートパソコンが詰んでいるイラスト">
+              <img id="stop_layer" class="pc" src="images/stop_layer.png" alt="地層処分が詰んでいるイラスト">
+              <img class="tab" src="images/stop.png" alt="地層処分とノートパソコンが詰んでいるイラスト">
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- //main -->
+
+    <!-- footer -->
+    <footer>
+      <div class="wrapper">
+        <p class="copyright">copyright</p>
+        <p class="produce"><a href="https://daisuke64.me/about/" target="_blank">制作者情報</a></p>
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- loading-animation -->
+    <div id="js-loader" class="loader">
+      <div class="loader-animation"></div>
+    </div>
+    <!-- //loading-animation -->
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/concept.js"></script>
+
+
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+  </head>
+
+  <body>
+    <!-- ############# start ############# -->
+    <div id="start">
+      <button id="btn__start" class="center-abs">スタート<span>start</span></button>
+      <div id="start__massage" class="center">
+        <p>ここは原子力発電所のある小さな街……</p>
+        <p>与えられたミッションをクリアし</p>
+        <p>安全に電気を供給せよ。</p>
+      </div>
+    </div>
+    <!-- ############# //start ############# -->
+
+    <!-- ############# end ############# -->
+    <div id="end">
+      <div id="end__message__text">
+        <div id="end__message__1">
+          <p id="gameover">ゲームオーバー<span>geme over</span></p>
+          <p id="not__gameover">というわけにはいかない...</p>
+          <button id="end__next__1" class="end__next">次へ ▶︎</button>
+        </div>
+        <div id="end__message__2" class="center-abs">
+          <p style="margin-bottom: 32px;">日本では最終処分場の候補地すらあがっていない。<br>住民の理解が得られないからだ。</p>
+          <p>このストーリーの続きは……</p>
+          <button id="end__next__2" class="end__next">次へ ▶︎</button>
+        </div>
+      </div>
+      <div id="end__message__3">
+        <p>みんなが地層処分について知ることから始まる</p>
+      </div>
+
+      <!-- リンク -->
+      <div id="end__link">
+        <div class="flex">
+          <div class="end__link__more">
+            <p>＼　もっと知る　／</p>
+            <a class="numo" target="_blank" href="https://www.numo.or.jp/">NUMO</a>
+          </div>
+          <div class="end__link__share">
+            <p>＼　　シェアする　　／</p>
+            <div class="flex">
+              <a class="facebook" href="http://www.facebook.com/share.php?u=https://cfe.sakura.ne.jp/w_yamaguchi_sumida/" rel="nofollow" target="_blank"></a>
+              <a class="twitter" href="https://twitter.com/share?url=https://cfe.sakura.ne.jp/w_yamaguchi_sumida/&hashtags=高レベル放射性廃棄物,核のゴミ問題,NUMO&text=みんなもプレイしてみよう!核のゴミ処分シミュレーター" rel="nofollow" target="_blank"></a>
+              <a class="line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fcfe.sakura.ne.jp%2Fw_yamaguchi_sumida%2F"></a>
+            </div>
+          </div>
+          <div class="end__link__reload">
+            <p>＼はじめから／</p>
+            <a id="reload__trigger"><img class="center-abs" src="images/game/reload.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <!-- //リンク -->
+      <!-- ラストシーンの背景画像 -->
+      <img id="end__nuclear" src="images/game/end__nuclear.png" alt="ガラス固化体">
+      <!-- //ラストシーンの背景画像 -->
+    </div>
+    <!-- ############# //end ############# -->
+
+    <!-- ############# menu ############# -->
+    <div class="menu">
+      <!-- title -->
+      <div class="menu__title">
+        <div class="wrapper__game">
+          <p><span>produced by daisukesumida</span></p>
+        </div>
+      </div>
+      <!-- //title -->
+      <!-- navigation -->
+      <div class="menu__nav">
+        <div class="wrapper__game flex">
+          <!-- meter -->
+          <div class="meter">
+            <img class="meter__nuclear" src="images/game/nuclear.png" alt="ガラス固化体のイラスト ">
+            <div class="meter__display">
+              <span class="triangle-3__left"></span>
+              <span class="triangle-3__right"></span>
+              <div class="meter__display__box">
+                <!-- ここにmeter__line挿入 -->
+              </div>
+            </div>
+            <span class="triangle-2__left gray"></span>
+            <span class="triangle-2__right gray"></span>
+            <div id="meter__ex" class="menu__nav__ex">
+              <span class="triangle__top"></span>
+              <span id="meter__ex__close" class="menu__nav__ex__close">×</span>
+              <p>このゲージが満タンになる前に、<br>全ミッションをクリアしよう！</p>
+            </div>
+          </div>
+          <!-- //meter -->
+          <!-- navigation -->
+          <nav>
+            <ul id="world__ul">
+              <li id="world">
+                <img src="images/game/world.png" alt="地球儀アイコン">
+                <p class="menu__nav__text">ワールドマップ</p>
+                <span class="triangle-2__left"></span>
+                <span class="triangle-2__right"></span>
+                <span id="menu__nav__dot"></span>
+                <div id="world__ex" class="menu__nav__ex">
+                  <span class="triangle__top"></span>
+                  <span id="world__ex__close" class="menu__nav__ex__close">×</span>
+                  <p>世界地図を開けるぞ！<br>もし行き詰まったら、別のフィールドに移動してみよう！</p>
+                </div>
+              </li>
+              <li id="report">
+                <img src="images/game/report.png" alt="レポートアイコン">
+                <p class="menu__nav__text">レポート</p>
+                <span class="triangle-2__left"></span>
+                <span class="triangle-2__right"></span>
+                <div id="report__ex" class="menu__nav__ex">
+                  <span class="triangle__top"></span>
+                  <span id="report__ex__close" class="menu__nav__ex__close">×</span>
+                  <p>ゲットしたレポートは、ここからいつでも見返すことができるぞ！</p>
+                </div>
+              </li>
+              <li id="mission">
+                <img src="images/game/mission.png" alt="ミッションアイコン">
+                <p class="menu__nav__text">ミッション</p>
+                <span class="triangle-2__left"></span>
+                <span class="triangle-2__right"></span>
+                <div id="mission__ex" class="menu__nav__ex">
+                  <span class="triangle__top"></span>
+                  <span id="mission__ex__close" class="menu__nav__ex__close">×</span>
+                  <p>与えられたミッションは、ここからいつでも確認できるぞ！</p>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- //navigation -->
+        </div>
+      </div>
+      <!-- //navigation -->
+
+    </div>
+    <!-- // ############# menu ############# -->
+
+    <!-- ############# game__main ############# -->
+    <div class="game__main">
+      <!-- main__display -->
+      <img id="img__main" src="images/game/main.png" alt="ゲームのメイン画面">
+      <img id="img__end" src="images/game/main__under.png" alt="">
+      <img id="img__main__mask" src="images/game/main__mask.png" alt="マスク">
+      <img id="gif__truck" src="images/game/truck.gif" alt="トラック">
+
+      <div id="clouds__electro">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+      </div>
+      <div id="clouds__recycle">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+        <img class="cloud" src="images/game/cloud.gif" alt="くも">
+      </div>
+
+      <div id="start__electro">
+        <img src="images/game/electro.png" alt="発電アイコン">
+        <img id="start__electro-hover" src="images/game/electro-hover.png" alt="発電アイコン">
+      </div>
+      <div id="start__recycle">
+        <img src="images/game/recycle.png" alt="リサイクルアイコン">
+        <img id="start__recycle-hover" src="images/game/recycle-hover.png" alt="リサイクルアイコン">
+      </div>
+
+      <img id="nuclear_to_meter" src="images/game/nuclear.png" alt="ガラス固化体">
+
+      <div id="mission__clear" class="slide-animation">
+        <p><img src="images/game/check.png" alt="チェック">MISSION CLEAR!</p>
+      </div>
+      <div id="report__get" class="slide-animation">
+        <p><img src="images/game/plus_document.png" alt="チェック">REPORT GET!</p>
+      </div>
+
+      <div id="alert__overlay"></div>
+
+      <!-- note__5 -->
+      <div id="world__note__5__trigger" class="note">
+        <img src="images/game/world_note.gif" alt="注意">
+        <div class="note__text">
+          地下深くに埋めればいいのでは？
+        </div>
+      </div>
+
+      <!-- worldmap -->
+      <div id="world__5" class="world__contents">
+        <button id="btn__world__close__5" class="btn__report__close">閉じる</button>
+        <p class="world__contents__title"><img src="images/game/world_pin.png" alt="">地下</p>
+        <img class="world__contents__img" src="images/game/world_layer.png" alt="地層処分">
+        <div id="world__note__5" class="note">
+          <img src="images/game/world_note.gif" alt="注意">
+          <div class="note__text">
+            地層処分のレポートを手に入れる
+          </div>
+        </div>
+        <p class="note__ban"></p>
+      </div>
+
+      <div id="world__4" class="world__contents">
+        <button id="btn__world__close__4" class="btn__report__close">閉じる</button>
+        <p class="world__contents__title"><img src="images/game/world_pin.png" alt="">フィンランド</p>
+        <img class="world__contents__img" src="images/game/world_fin.png" alt="フィンランド">
+        <div id="world__note__4" class="note">
+          <img src="images/game/world_note.gif" alt="注意">
+          <div class="note__text">
+            フィンランドのレポートを入手する
+          </div>
+        </div>
+        <p class="note__ban"></p>
+      </div>
+
+      <div id="world__3" class="world__contents">
+        <button id="btn__world__close__3" class="btn__report__close">閉じる</button>
+        <p class="world__contents__title"><img src="images/game/world_pin.png" alt="">ロケット発射場</p>
+        <img class="world__contents__img" src="images/game/world_univ.png" alt="ロケット">
+        <div id="world__note__3" class="note">
+          <img src="images/game/world_note.gif" alt="注意">
+          <div class="note__text">
+            宇宙に飛ばして処分する！
+          </div>
+        </div>
+        <p class="note__ban"><img src="images/game/ban.png" alt="禁止マーク">ロケットの発射が成功するとは限らない！<br>
+        他の処分方法を探そう</p>
+      </div>
+
+      <div id="world__2" class="world__contents">
+        <button id="btn__world__close__2" class="btn__report__close">閉じる</button>
+        <p class="world__contents__title"><img src="images/game/world_pin.png" alt="">南極</p>
+        <img class="world__contents__img" src="images/game/world_ice.png" alt="南極のステージ">
+        <div id="world__note__2" class="note">
+          <img src="images/game/world_note.gif" alt="注意">
+          <div class="note__text">
+            南極の氷の下に埋める！
+          </div>
+        </div>
+        <p class="note__ban"><img src="images/game/ban.png" alt="禁止マーク">南極条約により禁止されている！<br>
+        他の処分方法を探そう</p>
+      </div>
+
+      <div id="world__1" class="world__contents">
+        <button id="btn__world__close__1" class="btn__report__close">閉じる</button>
+        <p class="world__contents__title"><img src="images/game/world_pin.png" alt="">海</p>
+        <img class="world__contents__img" src="images/game/world_sea.png" alt="海のステージ">
+        <div id="world__note__1" class="note">
+          <img src="images/game/world_note.gif" alt="注意">
+          <div class="note__text">
+            海底に沈めて処分する！
+          </div>
+        </div>
+        <p class="note__ban"><img src="images/game/ban.png" alt="禁止マーク">ロンドン条約により禁止されている！<br>
+        他の処分方法を探そう</p>
+      </div>
+      <!-- //worldmap -->
+
+      <!-- mission -->
+      <div id="mission__contents">
+        <div class="menu__window__title">
+          <h3>mission</h3>
+          <span>ミッション</span>
+        </div>
+        <div class="menu__window__mission">
+          <ul>
+            <li id="mission__contents__insert" class="mission__current">
+              <!-- ここに挿入 -->
+            </li>
+          </ul>
+        </div>
+        <button id="mission__contents__close" class="btn__close">OK</button>
+      </div>
+      <!-- // mission -->
+
+      <!-- report -->
+      <div id="report__6" class="container report__contents">
+        <button id="btn__report__close__6" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_fin.png" alt="サンプル">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.6<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>フィンランドは最先端</h4>
+              </div>
+              <p>
+                フィンランドではすでに、処分場を建設する場所の調査を行い、審査を経て最終処分地が決定しました。<br>
+                そして現在、世界に先駆けて、処分場の建設が行われています。<br>
+                <br>
+                <img src="images/game/photo_edu.png" alt="教育"><br>
+                <br>
+                フィンランドでは「核のゴミ問題」について、若者への教育がさかんに行われており、地層処分の安全性を理解している人が多いようです。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <div id="report__5" class="container report__contents">
+        <button id="btn__report__close__5" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_layer.png" alt="サンプル">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.5<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>地層処分とは</h4>
+              </div>
+              <p>
+                地層処分とは「何重ものバリアを施して地下300mに埋める方法」です。<br>
+                現在、これが最適な方法であると、国際的に共通認識されています。<br>
+                <br>
+                処分場を建設する場所の調査から、閉鎖まで、地層処分は100年にもおよぶ事業です。<br>
+                みなさんの未来の子供たち、さらに次の世代も、この事業を見届けることになるでしょう。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <div id="report__4" class="container report__contents">
+        <button id="btn__report__close__4" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_pen.png" alt="サンプル">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.4<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>さまざまな処分方法</h4>
+              </div>
+              <p>
+                自分の国で出た「核のゴミ」は、自分の国で処分しなければならない、ことが国際的に決まっています。<br>
+                そのため、これまでに世界各国で、さまざまな処分方法が検討されてきました。<br>
+                <br>
+                <img src="images/game/photo_univ.png" alt="宇宙処分"><br>
+                宇宙に飛ばす「宇宙処分」<br>
+                ロケットの発射が成功するとは限らないので×<br>
+                <br>
+                <img src="images/game/photo_sea.png" alt="海洋底処分"><br>
+                海底に沈める「海洋底処分」<br>
+                ロンドン条約により禁止×<br>
+                <br>
+                <img src="images/game/photo_ice.png" alt="氷床処分"><br>
+                南極の氷の下に埋める「氷床処分」<br>
+                南極条約により禁止×
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <div id="report__3" class="container report__contents">
+        <button id="btn__report__close__3" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_meter.png" alt="サンプル">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.3<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>核のゴミ問題</h4>
+              </div>
+              <p>
+                日本では、このガラス固化体がすでに25,000本相当発生していると言われています。<br>
+                人間の立ち入れない場所で、安全な方法で処分しなければなりません。<br>
+                <img src="images/game/photo_nuclear.png" alt="たくさんのガラス固化体"><br>
+                しかし、もう10年以上も処分にむけた目処が立っていません。<br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <div id="report__2" class="container report__contents">
+        <button id="btn__report__close__2" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_renu.png" alt="サンプル">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.2<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>高レベル放射性廃棄物</h4>
+              </div>
+              <p>
+                再処理工場に運びこまれた使用済燃料は、再利用できる資源にリサイクルされます。<br>
+                しかし、その中にはリサイクルできない廃棄物が残ります。<br>
+                この廃棄物は、放射線のレベルが高く、人体に大きな影響を及ぼします。<br>
+                <br>
+                <img src="images/game/photo_nuclear_image.png" alt="ガラス固化体イメージ"><br>
+                そこで、これをガラスと融かし固めた「ガラス固化体」の形として、安定化させます。<br>
+                これが「高レベル放射性廃棄物」です。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <div id="report__1" class="container report__contents">
+        <button id="btn__report__close__1" class="btn__report__close">閉じる</button>
+        <div class="scrollable">
+          <div class="adjustment">
+            <img class="clip" src="images/game/clip.png" alt="クリップ">
+            <div class="report__img__outer">
+              <img src="images/game/photo_truck.png" alt="使用済燃料">
+            </div>
+            <div class="report__contents__text">
+              <div class="report__contents__title">
+                <p>レポート No.1<span>/6</span></p>
+                <span class="new__badge">new</span>
+                <h4>使用済燃料</h4>
+              </div>
+              <p>
+                原子力発電所では、核燃料を燃焼させることで電気をつくっています。<br>
+                役目を終えた核燃料は「使用済燃料」として取り出され、プールの中で数年間冷却させた後、再処理工場へと運ばれます。<br>
+                <br>
+                日本では、青森県六ヶ所村に再処理工場があり、全国の原子力発電所から使用済燃料が集められます。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="scrollbar">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </div>
+      <!-- //report -->
+
+      <!-- //main__display -->
+
+      <!-- window -->
+      <!-- world-map -->
+      <div id="world__window" class="menu__window">
+        <div class="menu__window__title">
+          <h3>world map</h3>
+          <span>ワールドマップ</span>
+        </div>
+        <img class="img__world-map" src="images/game/map.png" alt="世界地図のイラスト">
+        <div id="map__pin__method">
+          <div id="map__1" class="map__pin__common">
+            <img src="images/game/world_pin.png" alt="ピン">
+            <img src="images/game/world_pin_border.png" alt="ピン">
+          </div>
+          <div id="map__2" class="map__pin__common">
+            <img src="images/game/world_pin.png" alt="ピン">
+            <img src="images/game/world_pin_border.png" alt="ピン">
+          </div>
+          <div id="map__3" class="map__pin__common">
+            <img src="images/game/world_pin.png" alt="ピン">
+            <img src="images/game/world_pin_border.png" alt="ピン">
+          </div>
+        </div>
+        <!-- finland -->
+        <div id="map__4" class="map__pin__common">
+          <img src="images/game/world_pin.png" alt="ピン">
+          <img src="images/game/world_pin_border.png" alt="ピン">
+        </div>
+        <button class="btn__close">閉じる</button>
+      </div>
+      <!-- //world-map -->
+
+      <!-- report -->
+      <div id="report__window" class="menu__window">
+        <div class="menu__window__title">
+          <h3>report</h3>
+          <span>レポート</span>
+        </div>
+        <div class="menu__window__report">
+          <ul>
+            <li class="report__trigger" id="report__trigger__6">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>フィンランドは最先端</p>
+              <span class="new__badge">new</span>
+            </li>
+            <li class="report__trigger" id="report__trigger__5">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>地層処分</p>
+            </li>
+            <li class="report__trigger" id="report__trigger__4">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>さまざまな処分方法</p>
+            </li>
+            <li class="report__trigger" id="report__trigger__3">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>核のゴミ問題</p>
+            </li>
+            <li class="report__trigger" id="report__trigger__2">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>高レベル放射性廃棄物</p>
+            </li>
+            <li class="report__trigger" id="report__trigger__1">
+              <img src="images/game/chevron__list.png" alt="矢印のアイコン">
+              <img src="images/game/chevron__list__active.png" alt="矢印のアイコン">
+              <p>使用済燃料</p>
+            </li>
+          </ul>
+        </div>
+        <button id="btn__close__report-list" class="btn__close">閉じる</button>
+      </div>
+      <!-- //report -->
+      <!-- mission -->
+      <div id="mission__window" class="menu__window">
+        <div class="menu__window__title">
+          <h3>mission</h3>
+          <span>ミッション</span>
+        </div>
+        <div class="menu__window__mission">
+          <ul>
+            <li id="mission__list__5" class="mission__list mission__current">
+              <img src="images/game/check__list.png" alt="矢印のアイコン">
+              <p>最終処分地の候補を探せ</p>
+            </li>
+            <li id="mission__list__4" class="mission__list mission__current">
+              <img src="images/game/check__list.png" alt="矢印のアイコン">
+              <p>フィンランドを調査せよ</p>
+            </li>
+            <li id="mission__list__3" class="mission__list mission__current">
+              <img src="images/game/check__list.png" alt="矢印のアイコン">
+              <p>処分方法を探せ</p>
+            </li>
+            <li id="mission__list__2" class="mission__list mission__current">
+              <img src="images/game/check__list.png" alt="矢印のアイコン">
+              <p>再処理工場を起動せよ</p>
+            </li>
+            <li id="mission__list__1" class="mission__list mission__current">
+              <img src="images/game/check__list.png" alt="矢印のアイコン">
+              <p>原子力発電所を起動せよ</p>
+            </li>
+          </ul>
+        </div>
+        <button class="btn__close">閉じる</button>
+      </div>
+      <!-- //mission -->
+      <!-- //window -->
+
+    </div>
+    <!-- //game__main -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/scroll.js"></script>
+    <script type="text/javascript">LineIt.loadButton();</script>
+  </body>
+</html>

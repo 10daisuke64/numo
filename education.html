@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>核のゴミ処分シミュレーター</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="核のゴミ処分シュミレーター">
+    <meta property="og:type" content="web-site">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__inner">
+          <h1><a href="index.html">核のゴミ処分シミュレーター</a></h1>
+          <p class="header__news">
+            <span>新着情報</span><br class="tab">
+            <span><time>2019.9.30</time></span>
+            <span>本サイトをリリースしました</span>
+            <span class="more-read"><a href="post.html">...もっと読む</a></span>
+          </p>
+        </div>
+      </div>
+      <!-- navigation -->
+      <nav>
+        <div class="wrapper">
+          <div class="nav__img">
+            <img src="images/title.png" alt="ヒーローイメージ">
+          </div>
+          <div id="nav__button" class="tab">
+            <img class="center-abs" src="images/nav__button.png" alt="メニューボタン">
+            <img class="center-abs" src="images/nav__button__active.png" alt="メニューボタン">
+            <span class="triangle__left"></span>
+            <span class="triangle__right"></span>
+          </div>
+          <div class="nav__text">
+            <ul>
+              <li>
+                <a href="index.html">トップ<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="background.html">ゲームの背景<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="concept.html">コンセプト<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+              <li>
+                <a href="education.html" class="current">教員のかたへ<span class="dot"></span></a>
+                <span class="triangle__left"></span>
+                <span class="triangle__right"></span>
+              </li>
+            </ul>
+            <span class="triangle__right triangle__big tab"></span>
+          </div>
+        </div>
+      </nav>
+      <!-- //navigation -->
+    </header>
+    <!-- //header -->
+
+    <!-- main -->
+    <main>
+      <div class="wrapper">
+        <section class="education">
+          <h2>教員のかたへ</h2>
+          <div class="container">
+            <h3>授業での使用について</h3>
+            <p>本サイトは「放射性廃棄物の地層処分」について、原子力発電環境整備機構（NUMO）よりご提供いただいた資料をもとに作成しました。<br>
+            学校の授業での使用、地層処分に関する啓蒙活動での使用、そのほか教育目的であれば無料でご使用いただけます。<br>
+            また、当サイトを加工（改変）および複製し配布することは禁止しております。<br>
+            ご不明な点がございましたら、下記フォームにてお問い合わせくださいませ。</p>
+            <div class="container__img">
+              <img class="center-abs pc" src="images/teacher.png" alt="先生と生徒のイラスト">
+              <img class="tab" width="80%" src="images/teacher.png" alt="先生と生徒のイラスト">
+            </div>
+          </div>
+          <!-- contact-form -->
+          <div class="container">
+            <h3>お問い合わせ</h3>
+            <div class="contact-form">
+              <div class="flex">
+                <div class="contact-form__container">
+                  <dl>
+                    <dt>お名前<span class="must">必須</span></dt>
+                    <dd><input type="text"></dd>
+                  </dl>
+                  <dl>
+                    <dt>メールアドレス<span class="must">必須</span></dt>
+                    <dd><input type="text"></dd>
+                  </dl>
+                  <dl>
+                    <dt>電話番号</dt>
+                    <dd><input type="text"></dd>
+                  </dl>
+                  <dl>
+                    <dt>会社名 / 学校名</dt>
+                    <dd><input type="text"></dd>
+                  </dl>
+                </div>
+                <div class="contact-form__container">
+                  <dl>
+                    <dt>お問い合わせ内容<span class="must">必須</span></dt>
+                    <dd><textarea name=""></textarea></dd>
+                  </dl>
+                </div>
+              </div>
+              <input class="btn__send" type="submit" value="送信">
+            </div>
+          </div>
+          <!-- //contact-form -->
+        </section>
+      </div>
+    </main>
+    <!-- //main -->
+
+    <!-- footer -->
+    <footer>
+      <div class="wrapper">
+        <p class="copyright">copyright</p>
+        <p class="produce"><a href="https://daisuke64.me/about/" target="_blank">制作者情報</a></p>
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- loading-animation -->
+    <div id="js-loader" class="loader">
+      <div class="loader-animation"></div>
+    </div>
+    <!-- //loading-animation -->
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="js/script.js"></script>
+
+
+</html>
